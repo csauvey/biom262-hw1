@@ -1,6 +1,6 @@
 # Exercise 1 Get NFKB binding sites only
 
-grep -i 'NFKB' tfbed.txt >tf.nfkb.bed
+grep -i 'NFKB' tfbed.txt > tf.nfkb.bed
 
 #Exercise 2 Extract nly the genes from the GTF file
 
@@ -8,11 +8,11 @@ grep -i -w 'transcript' gencode.v19.annotation.chr22.gtf > gencode.v19.annotatio
 
 #Exercise 3 Use biotools flank to get the promoters
 module load biotools
-bedtools flank -i gencode.v19.annotation.chr22.transcript.gtf -g hg19.genome -s -l 2000 -r 0 >gencode.v19.annotation.chr22.transcript.promoter.gtf 
+bedtools flank -i gencode.v19.annotation.chr22.transcript.gtf -g hg19.genome -s -l 2000 -r 0 > gencode.v19.annotation.chr22.transcript.promoter.gtf 
 
 #Exercise 4 Use bedtools intersect to overlap TFs with promoters
 module load biotools
-bedtools intersect -u -f 0.095 -a gencode.v19.annotation.chr22.transcript.promoter.gtf \
+bedtools intersect -a gencode.v19.annotation.chr22.transcript.promoter.gtf \
 -b tf.nfkb.bed > gencode.v19.annotation.chr22.transcript.promoter.nfkb.gtf
 
 #Exercise 5 Use bedtools getfasta to extract sequences
