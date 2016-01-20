@@ -10,6 +10,14 @@ grep -i -w 'transcript' gencode.v19.annotation.chr22.gtf > gencode.v19.annotatio
 module load biotools
 bedtools flank -i gencode.v19.annotation.chr22.transcript.gtf -g hg19.genome -s -l 2000 -r 0 >gencode.v19.annotation.chr22.transcript.promoter.gtf 
 
+#Exercise 4
+module load biotools
+bedtools intersect -a gencode.v19.annotation.chr22.transcript.promoter.gtf \
+-b tf.nfkb.bed > gencode.v19.annotation.chr22.transcript.promoter.nfkb.gtf
+
+#Exercise 5
+module load biotools
+bedtools getfasta -s -fi GRCh37.p13.chr22.fa -bed gencode.v19.annotation.chr22.transcript.promoter.nfkb.gtf -fo gencode.v19.annotation.chr22.transcript.promoter.nfkb.fasta
 
 #To submit a job for the PDAFM nodes, specify the pdafm queue. For example:
 
