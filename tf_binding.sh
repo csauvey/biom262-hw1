@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Script:
 grep -i 'NFKB' tfbed.txt >tf.nfkb.bed
 grep -i -w 'transcript' gencode.v19.annotation.chr22.gtf > gencode.v19.annotation.chr22.transcript.gtf
@@ -25,8 +24,7 @@ echo "Hello I am a message in standard error 2"  >&2
 #PBS -M <pjtorres@ucsd.edu;csauvey@ucsd.edu>
 #PBS -m abe
 #PBS -A <ucsd-train20>
-=======
->>>>>>> 22f948d60234638244f68115e88df3fac36e0431
+
 # Exercise 1 Get NFKB binding sites only
 
 #grep -i 'NFKB' tfbed.txt >tf.nfkb.bed
